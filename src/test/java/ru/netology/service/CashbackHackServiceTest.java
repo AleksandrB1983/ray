@@ -1,9 +1,9 @@
 package ru.netology.service;
 
-import static org.testng.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class CashbackHackServiceTest {
-    @org.testng.annotations.Test
+    @org.junit.Test
     public void needToSpendToGetTheMinimumCashbackAmount() {
         CashbackHackService service = new CashbackHackService();
         int amount = 900;
@@ -11,11 +11,11 @@ public class CashbackHackServiceTest {
         int actual = service.remain(amount);
         int expected = 100;
 
-        assertEquals(actual, expected);
+        assertEquals(expected, actual);
 
     }
 
-    @org.testng.annotations.Test
+    @org.junit.Test
     public void theBorderValueIsOneUnitLessThanTheMinimumAmountToReceiveTheCashback() {
         CashbackHackService service = new CashbackHackService();
         int amount = 999;
@@ -23,11 +23,11 @@ public class CashbackHackServiceTest {
         int actual = service.remain(amount);
         int expected = 1;
 
-        assertEquals(actual, expected);
+        assertEquals(expected, actual);
 
     }
 
-    @org.testng.annotations.Test
+    @org.junit.Test
     public void borderValueIsEqualToTheValueOfTheMinimumAmountForReceivingCashback() {
         CashbackHackService service = new CashbackHackService();
         int amount = 1000;
@@ -35,11 +35,11 @@ public class CashbackHackServiceTest {
         int actual = service.remain(amount);
         int expected = 0;
 
-        assertEquals(actual, expected);
+        assertEquals(expected, actual);
 
     }
 
-    @org.testng.annotations.Test
+    @org.junit.Test
     public void borderValueIsOneUnitHigherThanTheMinimumAmountToReceiveCashbackAndHowMuchYouHaveToPayToGetAdditionalCashback() {
         CashbackHackService service = new CashbackHackService();
         int amount = 1001;
@@ -47,7 +47,7 @@ public class CashbackHackServiceTest {
         int actual = service.remain(amount);
         int expected = 999;
 
-        assertEquals(actual, expected);
+        assertEquals(expected, actual);
 
     }
 
